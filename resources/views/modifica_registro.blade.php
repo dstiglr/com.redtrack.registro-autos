@@ -149,9 +149,10 @@
                     </div>
                 </div>
                 @if ($servicio->comments !== null)
+                    <input type="hidden" value="{{$servicio->comments}}" name="comentario">
                     <div class="form-group">
                         <label for="comentario">Comentario</label>
-                        <textarea disabled class="form-control" name="comentario" id="comentario" rows="3" required>{{$servicio->comments}}
+                            <textarea disabled class="form-control" name="comentario" id="comentario" rows="3" required>{{$servicio->comments}}
                         </textarea>
                     </div>
                 @else
