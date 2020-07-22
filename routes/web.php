@@ -17,11 +17,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-
-Route::get('/', function () {
-    return view('registro');
-});
-
 Route::post('/registro', 'AutoController@registro')->name('auto_registro');
-Route::get('/view/registro', 'AutoController@registroView')->name('view_registro');
+Route::post('/modifica/registro', 'AutoController@modificaRegistro')->name('modifica_registro');
+
+Route::get('/', 'AutoController@registroView')->name('view_registro');
 Route::get('/view/tabla', 'AutoController@tablaView')->name('view_tabala');
+Route::get('/view/modifica/registro/{id}', 'AutoController@modificaRegistroView')->name('view_modifica_registro');

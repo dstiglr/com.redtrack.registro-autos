@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autos</title>
+    <title>Karcher SLP</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -15,8 +15,6 @@
 </head>
 
 <body>
-    <!-- Just an image -->
-    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,6 +44,53 @@
                 <div class="form-group">
                     <label for="precio">Precio</label>
                     <input type="precio" class="form-control" id="precio" name="precio" required>
+                </div>
+                <div class="form-group">
+                    <label for="placas">Placas</label>
+                    <input type="placas" class="form-control" id="placas" name="placas" required>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <label>Economico</label>
+                            <select class="form-control" name="economico">
+                                <option value="">Elige una opcion....</option>
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-6">
+                            <label>Empleado</label>
+                            <select class="form-control" name="empleado">
+                                <option value="">Elige una opcion....</option>
+                                @foreach ($empleados as $empleado)
+                                    <option value="{{$empleado->name}}">{{$empleado->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <label>Firma</label>
+                            <select class="form-control" name="empresa">
+                                <option value="">Elige una opcion....</option>
+                                @foreach ($companias as $compania)
+                                    <option value="{{$compania->name}}">{{$compania->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group col-6">
+                            <label>Tipo</label>
+                            <select class="form-control" name="tipo">
+                                <option value="">Elige una opcion....</option>
+                                @foreach ($tipos as $tipo)
+                                    <option value="{{$tipo->type}}">{{$tipo->type}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="comentario">Comentario</label>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Autos</title>
+    <title>Karcher SLP</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/jszip-2.5.0/dt-1.10.21/af-2.3.5/b-1.6.2/b-colvis-1.6.2/b-flash-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/rg-1.1.2/rr-1.2.7/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.css"/>
@@ -76,7 +76,17 @@
                "type": 'GET',
             },
             columns:[
-                {data: 'id'},
+                { 
+                    data: 'id',
+                    "render": function(data, type, row, meta){
+                        if(type === 'display'){
+                            var url = "{{route('view_modifica_registro', ':data')}}";
+                            url = url.replace(':data', data);
+                            return '<a href="' + url +'">' + data + '</a>';
+                        }
+                        return data;
+                    }
+                },
                 { data: 'car_model'},
                 { data: 'price'},
                 { data: 'comments'},
