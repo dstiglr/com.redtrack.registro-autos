@@ -16,7 +16,6 @@ class AutoController extends Controller
         $servicio->car_model = $request->auto;
         $servicio->price = $request->precio;
         $servicio->plates = $request->placas;
-        $servicio->economic = $request->economico;
         $servicio->employed_sanitizer = $request->empleado;
         $servicio->company = $request->empresa;
         $servicio->type_car = $request->tipo;
@@ -56,7 +55,6 @@ class AutoController extends Controller
         $servicio->car_model = $request->auto;
         $servicio->price = $request->precio;
         $servicio->plates = $request->placas;
-        $servicio->economic = $request->economico;
         $servicio->employed_sanitizer = $request->empleado;
         $servicio->company = $request->empresa;
         $servicio->type_car = $request->tipo;

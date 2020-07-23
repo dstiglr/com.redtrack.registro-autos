@@ -55,7 +55,7 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label for="placas">Placas</label>
+                    <label for="placas">Placas / Economico</label>
                     @if ($servicio->plates !== null)
                         <input type="placas" class="form-control" id="placas" name="placas" value="{{$servicio->plates}}" readonly>
                     @else
@@ -65,28 +65,8 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="form-group col-6">
-                            <label>Economico</label>
-                                @if ($servicio->economic === 1)
-                                    <input type="hidden" value="{{$servicio->economic}}" name="economico">
-                                    <select class="form-control" name="economico" disabled  >
-                                        <option value="{{$servicio->economic}}">Si</option>
-                                    </select>
-                                @elseif ($servicio->economic === 0)
-                                    <input type="hidden" value="{{$servicio->economic}}" name="economico">
-                                    <select class="form-control" name="economico" disabled >
-                                        <option value="{{$servicio->economic}}">No</option>
-                                    </select>
-                                @else
-                                    <select class="form-control" name="economico">
-                                        <option value="">Elige una opcion....</option>
-                                        <option value="1">Si</option>
-                                        <option value="0">No</option>
-                                    </select>
-                                @endif
-                        </div>
                         @if ($servicio->employed_sanitizer !== null)
-                            <div class="form-group col-6">
+                            <div class="form-group col-12">
                                 <input type="hidden" value="{{$servicio->employed_sanitizer}}" name="empleado">
                                 <label>Empleado</label>
                                 <select class="form-control" name="empleado" disabled>
@@ -94,7 +74,7 @@
                                 </select>
                             </div>
                         @else
-                            <div class="form-group col-6">
+                            <div class="form-group col-12">
                                 <label>Empleado</label>
                                 <select class="form-control" name="empleado">
                                     <option value="">Elige una opcion....</option>

@@ -39,27 +39,19 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="auto">Auto</label>
-                    <input type="auto" class="form-control" id="auto" name="auto" required>
+                    <input type="auto" class="form-control" id="auto" name="auto">
                 </div>
                 <div class="form-group">
                     <label for="precio">Precio</label>
-                    <input type="precio" class="form-control" id="precio" name="precio" required>
+                    <input type="precio" class="form-control" id="precio" name="precio">
                 </div>
                 <div class="form-group">
-                    <label for="placas">Placas</label>
-                    <input type="placas" class="form-control" id="placas" name="placas" required>
+                    <label for="placas">Placas / Economico</label>
+                    <input type="placas" class="form-control" id="placas" name="placas">
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="form-group col-6">
-                            <label>Economico</label>
-                            <select class="form-control" name="economico">
-                                <option value="">Elige una opcion....</option>
-                                <option value="1">Si</option>
-                                <option value="0">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-6">
+                        <div class="form-group col-12">
                             <label>Empleado</label>
                             <select class="form-control" name="empleado">
                                 <option value="">Elige una opcion....</option>
@@ -94,7 +86,7 @@
                 </div>
                 <div class="form-group">
                     <label for="comentario">Comentario</label>
-                    <textarea class="form-control" name="comentario" id="comentario" rows="3" required></textarea>
+                    <textarea class="form-control" name="comentario" id="comentario" rows="3"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
